@@ -1,27 +1,24 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import ProblemCard from '../ProblemCard';
 
 
-class Euler0001 extends React.Component{
+class Euler0002 extends React.Component{
 
 	constructor(props) {
 		super(props);
 		this.state = { answer: "?" };
-		this.handleClick = this.handleClick.bind(this);
+		this.onSolve = this.onSolve.bind(this);
 		this.getEvenFibonacciNumbers = this.getEvenFibonacciNumbers.bind(this);
 	}
 
-	handleClick() {
+	onSolve() {
 
 		var numbers = this.getEvenFibonacciNumbers(4000000);
 		var total = 0;
 		numbers.forEach(num => {
 			total += num;
 		})
-		this.setState({
-			answer: total,
-		})
+		return total;
 	}
 
 	getEvenFibonacciNumbers(max_num) {
@@ -46,24 +43,12 @@ class Euler0001 extends React.Component{
 		var problem_statement_2 ="1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...";
 		var problem_statement_3 ="By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.";
 		return (
-
-			<Card style={{ width: '600px' }}>
-				<Card.Body>
-					<Card.Text>
-						{problem_statement_1}
-						<p/>
-						{problem_statement_2}
-						<p/>
-						{problem_statement_3}
-					</Card.Text>
-					<Button onClick={this.handleClick}>Solve</Button>
-					<Card.Text>
-						{this.state.answer}
-					</Card.Text>
-				</Card.Body>
-			</Card>
+			<ProblemCard
+				problem_statements={[problem_statement_1, problem_statement_2, problem_statement_3]}
+				onSolve={this.onSolve}
+			/>
 		);
 	}
 }
 
-export default Euler0001;
+export default Euler0002;
