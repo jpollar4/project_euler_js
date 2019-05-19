@@ -3,6 +3,7 @@ import Euler0001 from './problems/Euler0001';
 import Euler0002 from './problems/Euler0002';
 import Euler0003 from './problems/Euler0003';
 import Euler0004 from './problems/Euler0004';
+import Euler0005 from './problems/Euler0005';
 
 
 
@@ -16,6 +17,7 @@ function App() {
 			<Euler0002/>
 			<Euler0003/>
 			<Euler0004/>
+			<Euler0005/>
 		</div>
 	);
 }
