@@ -33,7 +33,7 @@ class ProblemCard extends React.Component{
 				<Card.Body>
 					{this.props.problem_statements.map((statement,idx) => {
 						return (
-							<Card.Text key={idx}>{statement}</Card.Text>
+							<div dangerouslySetInnerHTML={{__html:statement}} />
 						)
 					})}
 					<Button key="button" onClick={this.handleClick}>Solve</Button>
